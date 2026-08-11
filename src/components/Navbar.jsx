@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import logo from '../assets/images/logo RGC.jpeg'
 
 const links = [
   { href: '#about', label: 'About' },
@@ -37,11 +38,11 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 md:px-8">
         <a href="#top" className="flex items-center gap-3 group">
-          <span className="flex h-11 w-11 items-center justify-center rounded-full bg-wine text-gold-light shadow-sm ring-1 ring-ink/10 transition-transform group-hover:scale-105">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M12 2v20M4 8h16" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
-            </svg>
-          </span>
+          <img
+            src={logo}
+            alt="Redeemed Gospel Church Mukinduri logo"
+            className="h-11 w-11 rounded-full object-cover shadow-sm ring-1 ring-ink/10 transition-transform group-hover:scale-105"
+          />
           <span className="leading-tight">
             <span className="block font-display text-lg font-semibold text-ink">Redeemed Gospel Church</span>
             <span className="eyebrow block text-wine">Mukinduri</span>
@@ -50,8 +51,8 @@ export default function Navbar() {
 
         <div className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
-            <a
-              key={l.href}
+            
+              <a key={l.href}
               href={l.href}
               className="text-[0.95rem] font-medium text-ink/80 transition-colors hover:text-wine"
             >
@@ -88,8 +89,8 @@ export default function Navbar() {
             )}
           </button>
 
-          <a
-            href="#services"
+          
+            <a href="#services"
             className="hidden rounded-full bg-wine px-5 py-2.5 text-sm font-semibold text-cream shadow-sm transition-colors hover:bg-wine-dark md:inline-block"
           >
             Plan Your Visit
@@ -112,15 +113,12 @@ export default function Navbar() {
         </div>
       </nav>
 
-      
-
       {open && (
-        
         <div className="border-t border-ink/10 bg-paper px-5 pb-6 pt-2 md:hidden">
           <div className="flex flex-col gap-1">
             {links.map((l) => (
-              <a
-                key={l.href}
+              
+                <a key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
                 className="rounded-lg px-3 py-3 text-base font-medium text-ink/85 hover:bg-paper-dim"
@@ -128,8 +126,8 @@ export default function Navbar() {
                 {l.label}
               </a>
             ))}
-            <a
-              href="#services"
+            
+              <a href="#services"
               onClick={() => setOpen(false)}
               className="mt-2 rounded-full bg-wine px-5 py-3 text-center text-sm font-semibold text-cream"
             >

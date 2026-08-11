@@ -1,9 +1,9 @@
 const events = [
   {
-    date: { day: '02', month: 'AUG' },
-    title: 'Church Harvest & Thanksgiving',
+    date: { day: '14', month: 'AUG' },
+    title: 'Overnight Kesha',
     time: '11:00 AM',
-    place: 'Main Auditorium',
+    place: 'Church Grounds',
   },
   {
     date: { day: '16', month: 'AUG' },
