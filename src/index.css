@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-body: "Work Sans", "Helvetica Neue", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-ink: #1e1712;
+  --color-paper: #fbf5ea;
+  --color-paper-dim: #f2ead9;
+  --color-wine: #6b1e2a;
+  --color-wine-dark: #481420;
+  --color-wine-light: #8a3040;
+  --color-gold: #c79a3d;
+  --color-gold-light: #e4c878;
+  --color-green: #2f4a3c;
+  --color-green-light: #4c6b58;
+  --color-green: #2f4a3c;
+  --color-green-light: #4c6b58;
+
+  --color-cream: #fbf5ea;
+  --color-charcoal: #1e1712;
+}
+
+@layer base {
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  .dark {
+    --color-paper: #17130f;
+    --color-paper-dim: #211a15;
+    --color-ink: #f3ead9;
+  }
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background-color: var(--color-gold-light);
+    color: var(--color-wine-dark);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-gold);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Signature: a woven textile-inspired divider, echoing the kanga/kitenge
+     patterns worn to service — used sparingly as the page's one bold motif. */
+  .woven-divider {
+    height: 14px;
+    width: 100%;
+    background-image:
+      linear-gradient(135deg, var(--color-gold) 25%, transparent 25%),
+      linear-gradient(225deg, var(--color-gold) 25%, transparent 25%),
+      linear-gradient(45deg, var(--color-gold) 25%, transparent 25%),
+      linear-gradient(315deg, var(--color-gold) 25%, transparent 25%);
+    background-position: 14px 0, 14px 0, 0 0, 0 0;
+    background-size: 28px 28px;
+    background-repeat: repeat-x;
+    background-color: var(--color-wine);
+  }
+
+  /* Bulletin / ticket-stub card used for the weekly order of service */
+  .ticket-card {
+    position: relative;
+    background: var(--color-paper);
+    border: 1.5px solid var(--color-ink);
+  }
+
+  .ticket-card::before,
+  .ticket-card::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--color-paper-dim);
+    border-radius: 999px;
+    border: 1.5px solid var(--color-ink);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .ticket-card::before {
+    left: -11px;
+  }
+
+  .ticket-card::after {
+    right: -11px;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+  }
+}
