@@ -2,8 +2,8 @@ const events = [
   {
     date: { day: '14', month: 'AUG' },
     title: 'Overnight Kesha',
-    time: '11:00 AM',
-    place: 'Church Grounds',
+    time: '10:00 PM',
+    place: 'RGC Mukinduri',
   },
   {
     date: { day: '16', month: 'AUG' },
